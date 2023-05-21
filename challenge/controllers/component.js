@@ -1,6 +1,5 @@
 const {Component, Component_Supplier, Supplier, Product} = require('../db/models');
 
-
 module.exports = {
   index: async (req, res, next) => {
     try {

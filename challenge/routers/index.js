@@ -4,6 +4,7 @@ const product = require('../controllers/product');
 const component = require('../controllers/component');
 const supplier = require('../controllers/supplier');
 
+
 router.get('/', (req, res) => res.status(200).json({message: "welcome to blog api"}));
 
 router.get('/products', product.index); // get all product

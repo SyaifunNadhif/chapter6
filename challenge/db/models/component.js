@@ -12,20 +12,14 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
 
-      // relasi many-to-many -> Suppliers
-      Component.hasMany(models.Component_Supplier, {
-        foreignKey: 'component_id',
-        as: 'component_suppliers',
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE'
+      models.Component.belongsToMany(models.Supplier, {
+        through: models.Component_Supplier,
+        foreignKey: "component_id",
       });
 
-      // relasi many-to-many -> Products
-      Component.hasMany(models.Product_Component, {
-        foreignKey: 'component_id',
-        as: 'product_components',
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE'
+      models.Component.belongsToMany(models.Product, {
+        through: models.Product_Component,
+        foreignKey: "component_id",
       });
 
     }

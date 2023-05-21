@@ -11,12 +11,9 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      // relasi many-to-many --> Components
-      Product.hasMany(models.Product_Component, {
-        foreignKey: 'product_id',
-        as: 'product_components',
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE'
+      models.Product.belongsToMany(models.Component, {
+        through: models.Product_Component,
+        foreignKey: "product_id",
       });
     }
   }

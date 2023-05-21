@@ -1,0 +1,45 @@
+// Home
+GET http://localhost:3000
+
+
+### Create product data
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+    "name": "Jazz",
+    "quantity": 200,
+    "component_id": [1,1]
+}
+
+### Get all products
+GET http://localhost:3000/products
+
+### Get detail products
+GET http://localhost:3000/products/1
+
+
+### Update product data
+PUT http://localhost:3000/products/2
+Content-Type: application/json
+
+{   
+    "id": 1,
+    "name": "Brio",
+     "component_id" : [1,1] 
+    // "deskripsi": "Ganti deskripsi"
+}
+
+### Delete product data
+DELETE  http://localhost:3000/products/1
+
+
+#relation
+### add component products
+POST http://localhost:3000/products/product-component HTTP/1.1
+content-type: application/json
+
+{
+    "product_id" : 1,
+    "component_id" : 5
+}

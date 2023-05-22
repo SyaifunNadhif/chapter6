@@ -4,7 +4,7 @@ Sudah Selesai untuk chapter 6 ini
 Jika ingin menambah data ke database nyalakan comment .env sesuai yang ingin dicoba localhost pada api.http dan di folder api tidak perlu diubah
 
 [dev-development](https://manufaktur-develop.up.railway.app/)
-https://manufaktur-develop.up.railway.app/
+### https://manufaktur-develop.up.railway.app/
 ### env dev-development
 DB_HOST=containers-us-west-119.railway.app
 DB_NAME=railway
@@ -16,7 +16,7 @@ ENVIRONMENT=development
 SENTTRY_DSN=https://a8c9fb7197f547fe8e0bc82f019eda8a@o4505210793361408.ingest.sentry.io/4505210807451648
 
 [prod-deployment](https://manufaktur-production.up.railway.app/)
-https://manufaktur-production.up.railway.app/
+### https://manufaktur-production.up.railway.app/
 ### env prod-deployment
 DB_HOST=containers-us-west-178.railway.app
 DB_NAME=railway

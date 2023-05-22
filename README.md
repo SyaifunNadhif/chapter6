@@ -6,7 +6,7 @@ Jika ingin menambah data ke database nyalakan comment .env sesuai yang ingin dic
 [dev-development](https://manufaktur-develop.up.railway.app/)
 ### https://manufaktur-develop.up.railway.app/
 ### env dev-development
-DB_HOST=containers-us-west-119.railway.app
+```DB_HOST=containers-us-west-119.railway.app
 DB_NAME=railway
 DB_USERNAME=postgres
 DB_PASSWORD=S3VY2l1gcB2q1nv9bQ6N
@@ -18,7 +18,7 @@ SENTTRY_DSN=https://a8c9fb7197f547fe8e0bc82f019eda8a@o4505210793361408.ingest.se
 [prod-deployment](https://manufaktur-production.up.railway.app/)
 ### https://manufaktur-production.up.railway.app/
 ### env prod-deployment
-DB_HOST=containers-us-west-178.railway.app
+```DB_HOST=containers-us-west-178.railway.app
 DB_NAME=railway
 DB_USERNAME=postgres
 DB_PASSWORD=zv1qy8ShL1yXlCsUovz9

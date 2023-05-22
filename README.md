@@ -14,7 +14,7 @@ DB_PORT=7044
 JWT_SECRET_KEY=rahasia
 ENVIRONMENT=development
 SENTTRY_DSN=https://a8c9fb7197f547fe8e0bc82f019eda8a@o4505210793361408.ingest.sentry.io/4505210807451648
-
+```
 [prod-deployment](https://manufaktur-production.up.railway.app/)
 ### https://manufaktur-production.up.railway.app/
 ### env prod-deployment
@@ -26,5 +26,5 @@ DB_PORT=7976
 JWT_SECRET_KEY=rahasia
 ENVIRONMENT=production
 SENTTRY_DSN=https://a8c9fb7197f547fe8e0bc82f019eda8a@o4505210793361408.ingest.sentry.io/4505210807451648
-
+```
 

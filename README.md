@@ -1,7 +1,8 @@
 # Challenge Chapter 6
 Sudah Selesai untuk chapter 6 ini
 
-Jika ingin menambah data ke database nyalakan comment .env sesuai yang ingin dicoba 
+Jika ingin menambah data ke database nyalakan comment .env sesuai yang ingin dicoba
+
 localhost pada api.http dan di folder api tidak perlu diubah
 
 [dev-development](https://manufaktur-develop.up.railway.app/)

@@ -23,7 +23,7 @@ GET http://localhost:3000/suppliers/1
 
 
 ### Update supplier data
-PUT http://localhost:3000/suppliers/3
+PUT http://localhost:3000/suppliers/2
 Content-Type: application/json
 
 {   
@@ -36,5 +36,5 @@ Content-Type: application/json
 
 
 ### Delete supplier data
-DELETE  http://localhost:3000/suppliers/4
+DELETE  http://localhost:3000/suppliers/3
 

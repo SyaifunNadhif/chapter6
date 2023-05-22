@@ -15,16 +15,6 @@ Content-Type: application/json
 }
 
 
-# ### relasi component dan supplier
-# POST http://localhost:3000/components/component-suppliers
-# Content-Type: application/json
-
-# {
-#   "supplier_id": 2,
-#   "component_id": 1
-# }
-
-
 ### Get all components
 GET http://localhost:3000/components
 
@@ -55,6 +45,7 @@ content-type: application/json
     "supplier_id" : 4,
     "component_id" : 1
 }
+
 
 
 

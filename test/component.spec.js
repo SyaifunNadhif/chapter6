@@ -34,7 +34,7 @@ describe("TEST /components post endpoint", () => {
     test("add component nama kosong (negatif)", async () => {
       const component1 = {
         name: "",
-        description: "Baterai berkapasitas 5000 mAh",
+        description: "Roda Ring 5",
         supplier_id: [1, 11],
       };
   
@@ -50,9 +50,9 @@ describe("TEST /components post endpoint", () => {
   
     test("add component supplier_id tidak ditemukan (negatif)", async () => {
       const component1 = {
-        name: "Baterai 5000 mAh",
-        description: "Baterai berkapasitas 5000 mAh",
-        supplier_id: [99],
+        name: "Roda",
+        description: "Roda Ring 5",
+        supplier_id: [76],
       };
   
       const response = await supertest(app).post("/components").send(component1);
@@ -162,8 +162,8 @@ describe("TEST /components/{id} put endpoint", () => {
     test("Put component by ID (negatif)", async () => {
       const component1 = {
         id: 99,
-        name: "Baterai 5000 mAh",
-        description: "Baterai berkapasitas 5000 mAh",
+        name: "Roda",
+        description: "Roda Ring 5",
         supplier_id: [1, 11],
       };
   

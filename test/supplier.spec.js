@@ -13,7 +13,6 @@ const supplier = {
 describe("TEST /suppliers post endpoint", () => {
     test("Tambah supplier berhasil (positif)", async () => {
       const response = await supertest(app).post("/suppliers").send(supplier);
-  
       expect(response.statusCode).toBe(201);
       expect(response.body).toEqual({
         status: true,
@@ -34,7 +33,6 @@ describe("TEST /suppliers post endpoint", () => {
 describe("TEST /suppliers get all endpoint", () => {
     test("Get all suppliers (positif)", async () => {
       const response = await supertest(app).get("/suppliers");
-  
       expect(response.statusCode).toBe(200);
       expect(response.body.status).toBe(true);
       expect(response.body.message).toBe("success");
@@ -53,9 +51,7 @@ describe("TEST /suppliers get all endpoint", () => {
 describe("TEST /suppliers/{id} get endpoint", () => {
     test("Get supplier by ID (positif)", async () => {
       const id = 1;
-  
       const response = await supertest(app).get("/suppliers/" + id);
-  
       expect(response.statusCode).toBe(200);
       expect(response.body).toEqual({
         status: true,
@@ -69,10 +65,8 @@ describe("TEST /suppliers/{id} get endpoint", () => {
       });
   
       const { Components } = response.body.data;
-  
       if (Components) {
         expect(Components).toBeInstanceOf(Array);
-  
         expect(Components.length).toBeGreaterThanOrEqual(0);
         Components.forEach((component) => {
           expect(component).toEqual({
@@ -86,9 +80,7 @@ describe("TEST /suppliers/{id} get endpoint", () => {
   
     test("Get component by ID supplier id not found (negatif)", async () => {
       const id = 99;
-  
       const response = await supertest(app).get("/suppliers/" + id);
-  
       expect(response.statusCode).toBe(404);
       expect(response.body).toEqual({
         status: false,
@@ -103,7 +95,6 @@ describe("TEST /suppliers/{id} put endpoint", () => {
       const response = await supertest(app)
         .put("/suppliers/" + supplier.id)
         .send(supplier);
-  
       expect(response.statusCode).toBe(201);
       expect(response.body).toEqual({
         status: true,
@@ -115,8 +106,8 @@ describe("TEST /suppliers/{id} put endpoint", () => {
     test("Put supplier by ID supplier_id not found (negatif)", async () => {
       const supplier1 = {
         id: 99,
-        name: "PT. Maju Jaya",
-        address: "Jl. Apel, Malang",
+        name: "Nasmoco",
+        address: "Jawa Tengah",
       };
   
       const response = await supertest(app)
@@ -135,7 +126,6 @@ describe("TEST /suppliers/{id} put endpoint", () => {
 describe("TEST /suppliers/{id} delete endpoint", () => {
     test("Delete supplier by ID (positif)", async () => {
       const response = await supertest(app).delete("/suppliers/" + supplier.id);
-  
       expect(response.statusCode).toBe(201);
       expect(response.body).toEqual({
         status: true,
@@ -151,9 +141,7 @@ describe("TEST /suppliers/{id} delete endpoint", () => {
         description: "Baterai berkapasitas 5000 mAh",
         supplier_id: [1, 11],
       };
-  
       const response = await supertest(app).delete("/suppliers/" + component1.id);
-  
       expect(response.statusCode).toBe(404);
       expect(response.body).toEqual({
         status: false,

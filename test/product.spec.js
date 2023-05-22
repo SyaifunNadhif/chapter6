@@ -15,7 +15,6 @@ const product = {
 describe("TEST /products post endpoint", () => {
     test("add product berhasil (positif)", async () => {
       const response = await supertest(app).post("/products").send(product);
-  
       expect(response.statusCode).toBe(201);
       expect(response.body).toEqual({
         status: true,
@@ -28,7 +27,6 @@ describe("TEST /products post endpoint", () => {
           createdAt: response.body.data.createdAt,
         },
       });
-  
       product.id = response.body.data.id;
     });
   
@@ -38,9 +36,7 @@ describe("TEST /products post endpoint", () => {
         quantity: 5,
         component_id: [2, 11],
       };
-  
       const response = await supertest(app).post("/products").send(product1);
-  
       expect(response.statusCode).toBe(401);
       expect(response.body).toEqual({
         status: false,
@@ -48,16 +44,14 @@ describe("TEST /products post endpoint", () => {
         data: null,
       });
     });
-  
+
     test("add product component_id kosong (negatif)", async () => {
       const product1 = {
-        name: "Redmi 5 plus",
+        name: "Mobil",
         quantity: 5,
         component_id: "",
       };
-  
       const response = await supertest(app).post("/products").send(product1);
-  
       expect(response.statusCode).toBe(401);
       expect(response.body).toEqual({
         status: false,
@@ -65,16 +59,14 @@ describe("TEST /products post endpoint", () => {
         data: null,
       });
     });
-  
+
     test("add product component_id not found (negatif)", async () => {
       const product1 = {
-        name: "Redmi 5 plus",
+        name: "Mobil",
         quantity: 5,
         component_id: [99],
       };
-  
       const response = await supertest(app).post("/products").send(product1);
-  
       expect(response.statusCode).toBe(404);
       expect(response.body).toEqual({
         status: false,
@@ -106,7 +98,6 @@ describe("TEST /products get all endpoint", () => {
 describe("TEST /products/{id} get endpoint", () => {
     test("Get product by ID (positive)", async () => {
       const response = await supertest(app).get("/products/" + product.id);
-  
       expect(response.statusCode).toBe(200);
       expect(response.body).toEqual({
         status: true,
@@ -128,9 +119,7 @@ describe("TEST /products/{id} get endpoint", () => {
   
     test("Get product by ID not found (negatif)", async () => {
       const id = 99;
-  
       const response = await supertest(app).get("/products/" + id);
-  
       expect(response.statusCode).toBe(404);
       expect(response.body).toEqual({
         status: false,
@@ -145,7 +134,6 @@ describe("TEST /products/{id} put endpoint", () => {
       const response = await supertest(app)
         .put("/products/" + product.id)
         .send(product);
-  
       expect(response.statusCode).toBe(201);
       expect(response.body).toEqual({
         status: true,
@@ -157,15 +145,13 @@ describe("TEST /products/{id} put endpoint", () => {
     test("Put product by ID, ID not found (negatif)", async () => {
       const product1 = {
         id: 99,
-        name: "Redmi 5 Plus",
+        name: "Mobil",
         quantity: 5,
         component_id: [1, 11],
       };
-  
       const response = await supertest(app)
         .put("/products/" + product1.id)
         .send(product1);
-  
       expect(response.statusCode).toBe(404);
       expect(response.body).toEqual({
         status: false,
@@ -177,15 +163,13 @@ describe("TEST /products/{id} put endpoint", () => {
     test("Put product by ID, ID not found (negatif)", async () => {
       const product1 = {
         id: product.id,
-        name: "Redmi 5 Plus",
+        name: "Mobil",
         quantity: 5,
         component_id: [99],
       };
-  
       const response = await supertest(app)
         .put("/products/" + product1.id)
         .send(product1);
-  
       expect(response.statusCode).toBe(404);
       expect(response.body).toEqual({
         status: false,
@@ -198,7 +182,6 @@ describe("TEST /products/{id} put endpoint", () => {
 describe("TEST /products/{id} delete endpoint", () => {
     test("Delete product by ID (positif)", async () => {
       const response = await supertest(app).delete("/products/" + product.id);
-  
       expect(response.statusCode).toBe(201);
       expect(response.body).toEqual({
         status: true,
@@ -209,7 +192,6 @@ describe("TEST /products/{id} delete endpoint", () => {
   
     test("Delete product by ID , ID not found (negatif)", async () => {
       const response = await supertest(app).delete("/products/" + product.id);
-  
       expect(response.statusCode).toBe(404);
       expect(response.body).toEqual({
         status: false,

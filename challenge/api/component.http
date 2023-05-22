@@ -8,6 +8,7 @@ POST http://localhost:3000/components
 Content-Type: application/json
 
 {
+    
     "name": "oli",
     "description": "oli terbaik",
     "supplier_id" : [1, 1]
@@ -33,18 +34,18 @@ GET http://localhost:3000/components/1
 
 
 ### Update component data
-PUT http://localhost:3000/components/1
+PUT http://localhost:3000/components/7
 Content-Type: application/json
 
 {   
-
+    "id": 1,
     "description": "roda mobil jonson",
     "supplier_id" : [1, 1]
 }
 
 
 ### Delete component data
-DELETE  http://localhost:3000/components/4
+DELETE  http://localhost:3000/components/8
 
 #relation
 ### add component products

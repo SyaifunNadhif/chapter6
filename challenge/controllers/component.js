@@ -224,82 +224,82 @@ module.exports = {
     }
   },
 
-  addSupplierComponent: async (req, res, next) => {
-    try {
-      const { supplier_id, component_id } = req.body;
+  // addSupplierComponent: async (req, res, next) => {
+  //   try {
+  //     const { supplier_id, component_id } = req.body;
 
-      if (!supplier_id || !req.body.hasOwnProperty("supplier_id")) {
-        return res.status(404).json({
-          status: false,
-          message: `supplier_id cannot be null`,
-          data: null,
-        });
-      }
+  //     // if (!supplier_id || !req.body.hasOwnProperty("supplier_id")) {
+  //     //   return res.status(404).json({
+  //     //     status: false,
+  //     //     message: `supplier_id cannot be null`,
+  //     //     data: null,
+  //     //   });
+  //     // }
 
-      if (!component_id || !req.body.hasOwnProperty("component_id")) {
-        return res.status(404).json({
-          status: false,
-          message: `component_id cannot be null`,
-          data: null,
-        });
-      }
+  //     // if (!component_id || !req.body.hasOwnProperty("component_id")) {
+  //     //   return res.status(404).json({
+  //     //     status: false,
+  //     //     message: `component_id cannot be null`,
+  //     //     data: null,
+  //     //   });
+  //     // }
 
-      const check_supplierid = await Supplier.findOne({
-        where: {
-          id: supplier_id,
-        },
-      });
+  //     // const check_supplierid = await Supplier.findOne({
+  //     //   where: {
+  //     //     id: supplier_id,
+  //     //   },
+  //     // });
 
-      const check_componentid = await Component.findOne({
-        where: {
-          id: component_id,
-        },
-      });
+  //     // const check_componentid = await Component.findOne({
+  //     //   where: {
+  //     //     id: component_id,
+  //     //   },
+  //     // });
 
-      if (!check_supplierid) {
-        return res.status(404).json({
-          status: false,
-          message: `can't find supplier with id ${supplier_id}`,
-          data: null,
-        });
-      }
+  //     // if (!check_supplierid) {
+  //     //   return res.status(404).json({
+  //     //     status: false,
+  //     //     message: `can't find supplier with id ${supplier_id}`,
+  //     //     data: null,
+  //     //   });
+  //     // }
 
-      if (!check_componentid) {
-        return res.status(404).json({
-          status: false,
-          message: `can't find component with id ${component_id}`,
-          data: null,
-        });
-      }
+  //     // if (!check_componentid) {
+  //     //   return res.status(404).json({
+  //     //     status: false,
+  //     //     message: `can't find component with id ${component_id}`,
+  //     //     data: null,
+  //     //   });
+  //     // }
 
-      const checkDataExist = await Component_Supplier.findOne({
-        where: {
-          supplier_id: supplier_id,
-          component_id: component_id,
-        },
-      });
+  //     // const checkDataExist = await Component_Supplier.findOne({
+  //     //   where: {
+  //     //     supplier_id: supplier_id,
+  //     //     component_id: component_id,
+  //     //   },
+  //     // });
 
-      if (checkDataExist) {
-        return res.status(401).json({
-          status: false,
-          message: `data already exist`,
-          data: null,
-        });
-      }
+  //     // if (checkDataExist) {
+  //     //   return res.status(401).json({
+  //     //     status: false,
+  //     //     message: `data already exist`,
+  //     //     data: null,
+  //     //   });
+  //     // }
 
-      const add = await Component_Supplier.create({
-        supplier_id,
-        component_id,
-      });
+  //     // const add = await Component_Supplier.create({
+  //     //   supplier_id,
+  //     //   component_id,
+  //     // });
 
-      return res.status(201).json({
-        status: true,
-        message: "success",
-        data: add,
-      });
-    } catch (error) {
-      next(error);
-    }
-  },
+  //     // return res.status(201).json({
+  //     //   status: true,
+  //     //   message: "success",
+  //     //   data: add,
+  //     // });
+  //   } catch (error) {
+  //     next(error);
+  //   }
+  // },
 
 };

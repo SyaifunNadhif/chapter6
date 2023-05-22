@@ -12,14 +12,14 @@ router.get('/products/:product_id', product.show); // get detail product
 router.post('/products', product.store); // create new product
 router.put('/products/:product_id', product.update); // update product
 router.delete('/products/:product_id', product.destroy); // delete product
-router.post('/products/product-component', product.addProductComponent);
+// router.post('/products/product-component', product.addProductComponent);
 
 router.get('/components', component.index); // get all component
 router.get('/components/:component_id', component.show); // get detail component
 router.post('/components', component.store); // create new component
 router.put('/components/:component_id', component.update); // update component
 router.delete('/components/:component_id', component.destroy); // delete component
-router.post('/components/component-supplier', component.addSupplierComponent);
+// router.post('/components/component-supplier', component.addSupplierComponent);
 
 router.get('/suppliers', supplier.index); // get all supplier
 router.get('/suppliers/:supplier_id', supplier.show); // get detail supplier

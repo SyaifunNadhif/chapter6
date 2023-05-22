@@ -36,5 +36,5 @@ Content-Type: application/json
 
 
 ### Delete supplier data
-DELETE  http://localhost:3000/suppliers/2
+DELETE  http://localhost:3000/suppliers/4
 

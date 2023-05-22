@@ -227,82 +227,82 @@ module.exports = {
     }
   },
 
-  addProductComponent: async (req, res, next) => {
-    try {
-      const { product_id, component_id } = req.body;
+  // addProductComponent: async (req, res, next) => {
+  //   try {
+  //     const { product_id, component_id } = req.body;
 
-      if (!product_id || !req.body.hasOwnProperty("product_id")) {
-        return res.status(401).json({
-          status: false,
-          message: `product_id cannot be null`,
-          data: null,
-        });
-      }
+  //     // if (!product_id || !req.body.hasOwnProperty("product_id")) {
+  //     //   return res.status(401).json({
+  //     //     status: false,
+  //     //     message: `product_id cannot be null`,
+  //     //     data: null,
+  //     //   });
+  //     // }
 
-      if (!component_id || !req.body.hasOwnProperty("component_id")) {
-        return res.status(401).json({
-          status: false,
-          message: `component_id cannot be null`,
-          data: null,
-        });
-      }
+  //     // if (!component_id || !req.body.hasOwnProperty("component_id")) {
+  //     //   return res.status(401).json({
+  //     //     status: false,
+  //     //     message: `component_id cannot be null`,
+  //     //     data: null,
+  //     //   });
+  //     // }
 
-      const check_productid = await Product.findOne({
-        where: {
-          id: product_id,
-        },
-      });
+  //     // const check_productid = await Product.findOne({
+  //     //   where: {
+  //     //     id: product_id,
+  //     //   },
+  //     // });
 
-      const check_componentid = await Component.findOne({
-        where: {
-          id: component_id,
-        },
-      });
+  //     // const check_componentid = await Component.findOne({
+  //     //   where: {
+  //     //     id: component_id,
+  //     //   },
+  //     // });
 
-      if (!check_productid) {
-        return res.status(404).json({
-          status: false,
-          message: `can't find product with id ${product_id}`,
-          data: null,
-        });
-      }
+  //     // if (!check_productid) {
+  //     //   return res.status(404).json({
+  //     //     status: false,
+  //     //     message: `can't find product with id ${product_id}`,
+  //     //     data: null,
+  //     //   });
+  //     // }
 
-      if (!check_componentid) {
-        return res.status(404).json({
-          status: false,
-          message: `can't find component with id ${component_id}`,
-          data: null,
-        });
-      }
+  //     // if (!check_componentid) {
+  //     //   return res.status(404).json({
+  //     //     status: false,
+  //     //     message: `can't find component with id ${component_id}`,
+  //     //     data: null,
+  //     //   });
+  //     // }
 
-      const checkDataExist = await Product_Component.findOne({
-        where: {
-          product_id: product_id,
-          component_id: component_id,
-        },
-      });
+  //     // const checkDataExist = await Product_Component.findOne({
+  //     //   where: {
+  //     //     product_id: product_id,
+  //     //     component_id: component_id,
+  //     //   },
+  //     // });
 
-      if (checkDataExist) {
-        return res.status(401).json({
-          status: false,
-          message: `data already exist`,
-          data: null,
-        });
-      }
+  //     // if (checkDataExist) {
+  //     //   return res.status(401).json({
+  //     //     status: false,
+  //     //     message: `data already exist`,
+  //     //     data: null,
+  //     //   });
+  //     // }
 
-      const add = await Product_Component.create({
-        product_id,
-        component_id,
-      });
+  //     // const add = await Product_Component.create({
+  //     //   product_id,
+  //     //   component_id,
+  //     // });
 
-      return res.status(201).json({
-        status: true,
-        message: "success",
-        data: add,
-      });
-    } catch (error) {
-      next(error);
-    }
-  },
+  //     // return res.status(201).json({
+  //     //   status: true,
+  //     //   message: "success",
+  //     //   data: add,
+  //     // });
+  //   } catch (error) {
+  //     next(error);
+  //   }
+  // },
 
 };

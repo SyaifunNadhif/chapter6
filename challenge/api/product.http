@@ -34,12 +34,4 @@ Content-Type: application/json
 DELETE  http://localhost:3000/products/1
 
 
-#relation
-### add component products
-POST http://localhost:3000/products/product-component HTTP/1.1
-content-type: application/json
 
-{
-    "product_id" : 1,
-    "component_id" : 5
-}
